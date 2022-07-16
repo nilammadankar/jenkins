@@ -5,7 +5,13 @@ pipeline {
             steps {
                 sh 'echo script pipeline >> file1'
             }
-        }    
+        } 
+    stages {
+        stage('git pull') {
+            steps {
+                git 'https://github.com/nilammadankar/jenkins.git'
+            }
+        }
+    }   
    }
 
-}
