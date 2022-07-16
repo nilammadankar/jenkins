@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    stages {
+        stage('git build') {
+            steps {
+                git 'https://github.com/nilammadankar/student-ui.git'
+            }
+        }
+        stage('maven') {
+            steps {
+                sh 'apt update'
+                sh 'sudo apt install maven -y'
+            }
+        }
+    }
+}
