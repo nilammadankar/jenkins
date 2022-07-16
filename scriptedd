@@ -1,0 +1,6 @@
+node('node1') {
+    stage {
+        sh 'echo successfully >> file1'
+    }
+
+}
