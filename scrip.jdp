@@ -5,5 +5,7 @@ pipeline {
             steps {
                 sh 'echo script pipeline >> file1'
             }
-        }    }
+        }    
+   }
+
 }
