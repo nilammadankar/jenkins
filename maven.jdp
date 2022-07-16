@@ -23,7 +23,7 @@ pipeline {
         }
         stage('copy student_war') {
             steps {
-                sh 'sudo cp /home/ubuntu/workspace/maven/target/studentapp-2.2-SNAPSHOT.war /mnt/apache-tomcat-8.5.81/webapps/'
+                sh 'sudo cp /home/ubuntu/workspace/pipeline2/target/studentapp-2.2-SNAPSHOT.war /mnt/apache-tomcat-8.5.81/webapps/'
                 }
             }
         }
