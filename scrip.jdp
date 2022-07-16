@@ -1,0 +1,9 @@
+pipeline {
+    agent {label 'node1'}
+    stages {
+        stage('build') {
+            steps {
+                sh 'echo script pipeline >> file1'
+            }
+        }    }
+}
