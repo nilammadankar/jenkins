@@ -1,7 +1,7 @@
 pipeline {
     agent {label 'node1'}
     stages {
-        stage('git build') {
+        stage('git pull') {
             steps {
                 git 'https://github.com/nilammadankar/student-ui.git'
             }
@@ -17,6 +17,11 @@ pipeline {
                 sh 'sudo apt update'
                 sh 'sudo wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.81/bin/apache-tomcat-8.5.81.tar.gz'
                 sh 'sudo tar xvzf apache-tomcat-8.5.81.tar.gz'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'mvn clean package'
             }
         }
     }
