@@ -22,7 +22,8 @@ pipeline {
                 yum update
                 yum install httpd -y
                 systemctl start httpd
-                systemctl enable httpd'''
+                systemctl enable httpd
+                echo "jenkins practice " >> /var/www/html/index.html'''
             }
         }
         
