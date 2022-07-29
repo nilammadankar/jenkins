@@ -1,0 +1,30 @@
+pipeline {
+    agent {label 'node1}
+    stages {
+        stage('git pull') {
+            steps {
+                git 'https://github.com/nilammadankar/jenkins.git'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'echo declarative script >>file1'
+                }
+            }
+        stage('test') {
+            steps {
+                echo 'declarative script with the help of SCM(source code manager) git'
+            }
+        }
+        stage('deploy') {
+            steps {
+                pwsh '''#!/bin/bash
+                yum update
+                yum install httpd -y
+                systemctl start httpd
+                systemctl enable httpd'''
+            }
+        }
+        
+    }
+}
