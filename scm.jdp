@@ -18,12 +18,8 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                pwsh '''#!/bin/bash
-                yum update
-                yum install httpd -y
-                systemctl start httpd
-                systemctl enable httpd
-                echo "jenkins practice " >> /var/www/html/index.html'''
+                sh 'mkdir -p /home/ubuntu/workspace/ndir'
+                
             }
         }
         
