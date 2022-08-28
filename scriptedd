@@ -1,5 +1,5 @@
 node('node1') {
-    stage {
+    stage('test') {
         sh 'echo successfully >> file1'
     }
 
